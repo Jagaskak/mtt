@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="Harasser_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceHarasser.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/env python</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Copyright (c) 2015-2017 Intel, Inc.  All rights reserved.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Copyright (c) 2015-2018 Intel, Inc.  All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># $COPYRIGHT$</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">#</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># Additional copyrights may follow</span></div>
@@ -254,50 +254,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">for</span> (process,ops,starttime),(status,stdout,stderr,time) <span class="keywordflow">in</span> zip(process_info,return_info):</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> status == 0:</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                process.join(int(self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>[<span class="stringliteral">&#39;join_timeout&#39;</span>][0]))</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">elif</span> status == 1:</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                process.terminate()</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            self.<a class="code" href="classHarasser_1_1Harasser.html#a96c7c91ef5d33784056c567ba49a2c8a">execution_counter</a> -= 1</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> return_info</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">##</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment"># Configure the harasser plugin on whether to run and what to run</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">#         </span></div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classHarasser_1_1Harasser.html#a5e76810f26871d800420089480269fb9">  177</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classHarasser_1_1Harasser.html#a5e76810f26871d800420089480269fb9">execute</a>(self, log, keyvals, testDef):</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        testDef.logger.verbose_print(<span class="stringliteral">&quot;Harasser Execute&quot;</span>)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        self.<a class="code" href="classHarasser_1_1Harasser.html#adddf34aabbc91934437e1a30134224c3">testDef</a> = testDef</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">if</span> log[<span class="stringliteral">&#39;section&#39;</span>] <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordflow">if</span> <span class="stringliteral">&quot;Default&quot;</span> <span class="keywordflow">in</span> log[<span class="stringliteral">&#39;section&#39;</span>]:</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    <span class="comment"># this section contains default settings</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    <span class="comment"># for this launcher</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    myopts = {}</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    testDef.parseOptions(log, self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>, keyvals, myopts)</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    <span class="comment"># transfer the findings into our local storage</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    keys = list(self.options.keys())</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    optkeys = list(myopts.keys())</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    <span class="keywordflow">for</span> optkey <span class="keywordflow">in</span> optkeys:</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                        <span class="keywordflow">for</span> key <span class="keywordflow">in</span> keys:</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                            <span class="keywordflow">if</span> key == optkey:</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>[key] = (myopts[optkey],self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>[key][1])</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    <span class="comment"># we captured the default settings, so we can</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <span class="comment"># now return with success</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    log[<span class="stringliteral">&#39;status&#39;</span>] = 0</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">except</span> KeyError:</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment"># error - the section should have been there</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            log[<span class="stringliteral">&#39;status&#39;</span>] = 1</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            log[<span class="stringliteral">&#39;stderr&#39;</span>] = <span class="stringliteral">&quot;Section not specified&quot;</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        log[<span class="stringliteral">&#39;status&#39;</span>] = 1</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        log[<span class="stringliteral">&#39;stderr&#39;</span>] = <span class="stringliteral">&quot;Must be used in a Default stage&quot;</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordflow">if</span> self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>[<span class="stringliteral">&#39;join_timeout&#39;</span>][0] <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    process.join()</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    process.join(int(self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>[<span class="stringliteral">&#39;join_timeout&#39;</span>][0]))</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">elif</span> status == 1:</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                process.terminate()</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            self.<a class="code" href="classHarasser_1_1Harasser.html#a96c7c91ef5d33784056c567ba49a2c8a">execution_counter</a> -= 1</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> return_info</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment"># Configure the harasser plugin on whether to run and what to run</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">#         </span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="classHarasser_1_1Harasser.html#a5e76810f26871d800420089480269fb9">  180</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classHarasser_1_1Harasser.html#a5e76810f26871d800420089480269fb9">execute</a>(self, log, keyvals, testDef):</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        testDef.logger.verbose_print(<span class="stringliteral">&quot;Harasser Execute&quot;</span>)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        self.<a class="code" href="classHarasser_1_1Harasser.html#adddf34aabbc91934437e1a30134224c3">testDef</a> = testDef</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">if</span> log[<span class="stringliteral">&#39;section&#39;</span>] <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keywordflow">if</span> <span class="stringliteral">&quot;Default&quot;</span> <span class="keywordflow">in</span> log[<span class="stringliteral">&#39;section&#39;</span>]:</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    <span class="comment"># this section contains default settings</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    <span class="comment"># for this launcher</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    myopts = {}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    testDef.parseOptions(log, self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>, keyvals, myopts)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    <span class="comment"># transfer the findings into our local storage</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    keys = list(self.options.keys())</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    optkeys = list(myopts.keys())</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <span class="keywordflow">for</span> optkey <span class="keywordflow">in</span> optkeys:</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                        <span class="keywordflow">for</span> key <span class="keywordflow">in</span> keys:</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                            <span class="keywordflow">if</span> key == optkey:</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>[key] = (myopts[optkey],self.<a class="code" href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">options</a>[key][1])</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <span class="comment"># we captured the default settings, so we can</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    <span class="comment"># now return with success</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    log[<span class="stringliteral">&#39;status&#39;</span>] = 0</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">except</span> KeyError:</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="comment"># error - the section should have been there</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            log[<span class="stringliteral">&#39;status&#39;</span>] = 1</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            log[<span class="stringliteral">&#39;stderr&#39;</span>] = <span class="stringliteral">&quot;Section not specified&quot;</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        log[<span class="stringliteral">&#39;status&#39;</span>] = 1</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        log[<span class="stringliteral">&#39;stderr&#39;</span>] = <span class="stringliteral">&quot;Must be used in a Default stage&quot;</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
 <div class="ttc" id="classHarasser_1_1Harasser_html_ab5ea4c244f800d83bcffabca0c2f0177"><div class="ttname"><a href="classHarasser_1_1Harasser.html#ab5ea4c244f800d83bcffabca0c2f0177">Harasser.Harasser.check</a></div><div class="ttdeci">def check</div><div class="ttdoc">A check to see if harassers are working properly. </div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00139">Harasser.py:139</a></div></div>
 <div class="ttc" id="classHarasser_1_1Harasser_html_a640d9b23c457a325faf5b907eb5bdc45"><div class="ttname"><a href="classHarasser_1_1Harasser.html#a640d9b23c457a325faf5b907eb5bdc45">Harasser.Harasser.activate</a></div><div class="ttdeci">def activate</div><div class="ttdoc">Activates plugin. </div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00051">Harasser.py:51</a></div></div>
 <div class="ttc" id="classHarasser_1_1Harasser_html_ad128bc111a91fd099e6f20db5320ca36"><div class="ttname"><a href="classHarasser_1_1Harasser.html#ad128bc111a91fd099e6f20db5320ca36">Harasser.Harasser.get_running_harassers</a></div><div class="ttdeci">def get_running_harassers</div><div class="ttdoc">Returns information about what harassers are currently running. </div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00086">Harasser.py:86</a></div></div>
@@ -314,7 +317,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classHarasser_1_1Harasser_html_a96c7c91ef5d33784056c567ba49a2c8a"><div class="ttname"><a href="classHarasser_1_1Harasser.html#a96c7c91ef5d33784056c567ba49a2c8a">Harasser.Harasser.execution_counter</a></div><div class="ttdeci">execution_counter</div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00031">Harasser.py:31</a></div></div>
 <div class="ttc" id="classHarasser_1_1Harasser_html_ab9ed73d71cdaae7d9b5cc81548823527"><div class="ttname"><a href="classHarasser_1_1Harasser.html#ab9ed73d71cdaae7d9b5cc81548823527">Harasser.Harasser.options</a></div><div class="ttdeci">options</div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00034">Harasser.py:34</a></div></div>
 <div class="ttc" id="classHarasser_1_1Harasser_html_a5b5cb263e3c62a9de749cd0424262703"><div class="ttname"><a href="classHarasser_1_1Harasser.html#a5b5cb263e3c62a9de749cd0424262703">Harasser.Harasser.print_name</a></div><div class="ttdeci">def print_name</div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00071">Harasser.py:71</a></div></div>
-<div class="ttc" id="classHarasser_1_1Harasser_html_a5e76810f26871d800420089480269fb9"><div class="ttname"><a href="classHarasser_1_1Harasser.html#a5e76810f26871d800420089480269fb9">Harasser.Harasser.execute</a></div><div class="ttdeci">def execute</div><div class="ttdoc">Configure the harasser plugin on whether to run and what to run. </div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00177">Harasser.py:177</a></div></div>
+<div class="ttc" id="classHarasser_1_1Harasser_html_a5e76810f26871d800420089480269fb9"><div class="ttname"><a href="classHarasser_1_1Harasser.html#a5e76810f26871d800420089480269fb9">Harasser.Harasser.execute</a></div><div class="ttdeci">def execute</div><div class="ttdoc">Configure the harasser plugin on whether to run and what to run. </div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00180">Harasser.py:180</a></div></div>
 <div class="ttc" id="classHarasserMTTTool_1_1HarasserMTTTool_html"><div class="ttname"><a href="classHarasserMTTTool_1_1HarasserMTTTool.html">HarasserMTTTool.HarasserMTTTool</a></div><div class="ttdef"><b>Definition:</b> <a href="HarasserMTTTool_8py_source.html#l00019">HarasserMTTTool.py:19</a></div></div>
 <div class="ttc" id="classHarasser_1_1Harasser_html"><div class="ttname"><a href="classHarasser_1_1Harasser.html">Harasser.Harasser</a></div><div class="ttdef"><b>Definition:</b> <a href="Harasser_8py_source.html#l00027">Harasser.py:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

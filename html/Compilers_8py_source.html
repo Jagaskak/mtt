@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="Compilers_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceCompilers.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/env python</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Copyright (c) 2016-2017 Intel, Inc.  All rights reserved.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Copyright (c) 2016-2018 Intel, Inc.  All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># $COPYRIGHT$</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">#</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># Additional copyrights may follow</span></div>
@@ -264,17 +264,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
 <div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classCompilers_1_1Compilers.html#aac1f107915d98d9b076c68a7ebc2ec48">  174</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classCompilers_1_1Compilers.html#aac1f107915d98d9b076c68a7ebc2ec48">check_compile</a>(self, testDef, macro, c_code, compiler):</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment"># write out a little test program</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        fh = open(<span class="stringliteral">&quot;spastic&quot;</span>, <span class="stringliteral">&#39;w&#39;</span>)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        fh = open(<span class="stringliteral">&quot;spastic.c&quot;</span>, <span class="stringliteral">&#39;w&#39;</span>)</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">for</span> ln <span class="keywordflow">in</span> c_code:</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            print(ln, file=fh)</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        fh.close()</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment"># Attempt to compile it</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        mycmdargs = [compiler, <span class="stringliteral">&quot;-c&quot;</span>, <span class="stringliteral">&quot;spastic&quot;</span>]</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        mycmdargs = [compiler, <span class="stringliteral">&quot;-c&quot;</span>, <span class="stringliteral">&quot;spastic.c&quot;</span>]</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        status, stdout, stderr, _ = testDef.execmd.execute(<span class="keywordtype">None</span>, mycmdargs, testDef)</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="comment"># cleanup the test</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        os.remove(<span class="stringliteral">&quot;spastic&quot;</span>)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        os.remove(<span class="stringliteral">&quot;spastic.c&quot;</span>)</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">if</span> 0 == status:</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">True</span></div>

@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ompi_hello_world.ini</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ompi__hello__world_8ini.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html">    1</a></span>&#160;<span class="comment">#Copyright (c) 2016      Intel, Inc.  All rights reserved.</span></div>
+<a href="ompi__hello__world_8ini.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html">    1</a></span>&#160;<span class="comment">#Copyright (c) 2016-2018 Intel, Inc.  All rights reserved.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">#</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># Set defaults</span></div>
@@ -126,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;[ASIS TestGet:HelloWorld]</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;plugin = Copytree</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#a88a2db81a1836d83ed41abd7d39c9c4e">   38</a></span>&#160;src = ${ENV:MTT_INSTALL_DIR}/samples/python/</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#a89cf2df98bd1f53501da343b4a25846c">   38</a></span>&#160;src = /opt/mtt/samples/python/</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">#======================================================================</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"># Test build phase</span></div>
@@ -138,41 +138,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"># Use our built ompi install</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#a64807561a94c3ff5b1c9a945e580f643">   49</a></span>&#160;middleware = MiddlewareBuild:OMPI</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#aa34adcfe660e349e3d2d9f69eb9412bb">   50</a></span>&#160;command = mpicc mpi_hello_world.c -o mpi_hello_world </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#a8e605d382654baee6320ca445c211c82">   50</a></span>&#160;command = mpicc mpi_hello_world.c -o mpi_hello_world </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">#======================================================================</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"># Define some default launcher execution parameters</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">#======================================================================</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">#[LauncherDefaults:SLURM]</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">#plugin = SLURM</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">#command = srun</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">#job_name = MTT_TEST</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">#options = -N 1</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"># test_dir = /home/travis/build/Jagaskak/mtt/docs/mttscratch/TestGet_HelloWorld</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">#----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;[TestRun:PrintContents]</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;plugin = Shell</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;parent = TestBuild:HelloWorld</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;command = sh -c <span class="stringliteral">&quot;echo HERE; pwd; ls -la;&quot;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"># mpirun -np 4 mpi_hello_world&quot;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">#----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">#[TestRun:HelloWorld]</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">#plugin = SLURM</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">#parent = TestBuild:HelloWorld</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">#test_list = mpi_hello_world</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">#======================================================================</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"># Reporter phase</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">#======================================================================</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;[Reporter:Console]</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;plugin = TextFile</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;[Reporter:JunitXML]</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;plugin = JunitXML</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#ae42ce8011012447dba87c7337e9ddab8">   83</a></span>&#160;filename=ompi_hello_world.xml</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;[LauncherDefaults:SLURM]</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;plugin = SLURM</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;command = srun</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#a6aa613720eb4f4129d00b6469b68d7cf">   58</a></span>&#160;job_name = MTT_TEST</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#a4bc86d53822edfbcb8b35e8fc40d0075">   59</a></span>&#160;options = -N 4 </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">#----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;[TestRun:HelloWorld]</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;plugin = SLURM</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;parent = TestBuild:HelloWorld</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#a7df798e8beb69ae3bf2537c25e7b7370">   65</a></span>&#160;test_list = mpi_hello_world</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">#======================================================================</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"># Reporter phase</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">#======================================================================</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;[Reporter:Console]</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;plugin = TextFile</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;[Reporter:JunitXML]</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;plugin = JunitXML</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespaceompi__hello__world.html#ae42ce8011012447dba87c7337e9ddab8">   75</a></span>&#160;filename=ompi_hello_world.xml</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="JunitXML_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceJunitXML.html">    1</a></span>&#160;<span class="comment"># -*- coding: utf-8; tab-width: 4; indent-tabs-mode: f; python-indent: 4 -*-</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Copyright (c) 2015-2016 Intel, Inc. All rights reserved.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Copyright (c) 2015-2018 Intel, Inc. All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># $COPYRIGHT$</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">#</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># Additional copyrights may follow</span></div>
@@ -163,17 +163,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment"># TODO: ain&#39;t nobody got time for that.  8-).</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        time = 0</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> lg <span class="keywordflow">in</span> fullLog:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                stdout = lg[<span class="stringliteral">&#39;stdout&#39;</span>]</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">except</span> KeyError:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&#39;stdout&#39;</span> <span class="keywordflow">in</span> lg <span class="keywordflow">and</span> lg[<span class="stringliteral">&#39;stdout&#39;</span>] <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                stdout = <span class="stringliteral">&quot;\n&quot;</span>.join(lg[<span class="stringliteral">&#39;stdout&#39;</span>])</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                stdout = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                stderr = lg[<span class="stringliteral">&#39;stderr&#39;</span>]</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">except</span> KeyError:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&#39;stderr&#39;</span> <span class="keywordflow">in</span> lg <span class="keywordflow">and</span> lg[<span class="stringliteral">&#39;stderr&#39;</span>] <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                stderr = <span class="stringliteral">&quot;\n&quot;</span>.join(lg[<span class="stringliteral">&#39;stderr&#39;</span>])</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                stderr = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&#39;time&#39;</span> <span class="keywordflow">in</span> lg <span class="keywordflow">and</span> lg[<span class="stringliteral">&#39;time&#39;</span>] <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                time = lg[<span class="stringliteral">&#39;time&#39;</span>]</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">except</span> KeyError:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                time = 0</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            tc = TestCase(lg[<span class="stringliteral">&#39;section&#39;</span>], classname, time, stdout, stderr)</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">try</span>:</div>
