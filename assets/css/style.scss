@@ -198,6 +198,9 @@ header {
 }
 
 .navbar {
+  position: relative;
+  z-index: 101;
+
   ul {
     list-style-type: none;
     margin: 0;
