@@ -141,9 +141,8 @@ dt {
 }
 
 header {
-  padding: 25px 20px 40px 20px;
+  padding: 90px 20px 40px 20px;
   margin: 0;
-  position: fixed;
   top: 0;
   left:0;
   right:0;
@@ -178,9 +177,8 @@ header {
 #banner {
   z-index: 100;
   left:0;
-  right:50%;
+  right:0;
   height: 50px;
-  margin-right:-382px;
   position: fixed;
   top: 115px;
   background: #ffcc00;
@@ -192,7 +190,7 @@ header {
   .button {
     border: 1px solid #dba500;
     /* To change button color, overwrite this line in other button classes*/
-    background: linear-gradient(rgb(255, 231, 136), rgb(255, 206, 56));
+    // background: linear-gradient(rgb(255, 231, 136), rgb(255, 206, 56));
     border-radius: 2px;
     box-shadow: inset 0px 1px 0px rgba(255,255,255,.4), 0px 1px 1px rgba(0,0,0,.1);
     background-color: #FFE788;
@@ -207,8 +205,9 @@ header {
     text-align:center;
 
     &:hover {
-      background: linear-gradient(rgb(255, 231, 136), rgb(255, 231, 136));
-      background-color: #ffeca0;
+      // background: linear-gradient(rgb(255, 231, 136), rgb(255, 231, 136));
+      // background-color: #ffeca0;
+      background-color: #82B700;
     }
   }
 
@@ -222,30 +221,6 @@ header {
     font-size:14px;
     background-color: #FFE788;
     border: 1px solid #dba500;
-  }
-
-  .codeview {
-    float:left;
-    left:50%;
-    margin-left:155px;
-    padding: 10px 12px;
-    margin-top: 6px;
-    line-height:14px;
-    font-size:14px;
-    background-color: #FFE788;
-    border: 1px solid #dba500;
-  }
-
-
-  .doxygen {
-    float:left;
-    left:50%;
-    margin-left:10px;
-    padding: 10px 12px;
-    margin-top: 6px;
-    line-height:14px;
-    font-size:14px;
-    background-color: #FFE788;
   }
 
   .codeinfo {
@@ -284,6 +259,37 @@ header {
     }
   }
 
+  li a:hover, .dropdown:hover, .button {
+    background-color: #82B700;
+  }
+
+  li.dropdown {
+    display:inline;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    padding: 32px 32px;
+    background-color: #222;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    display: inline;
+    text-align: center;
+  }
+
+  .dropdown-content a:hover {
+    background-color: blue;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: inline;
+  }
+
   #logo {
     position:absolute;
     height: 36px;
@@ -299,7 +305,7 @@ section {
   width:590px;
   padding: 30px 30px 50px 30px;
   margin: 20px 0;
-  margin-top: 190px;
+  margin-top: 20px;
   position:relative;
   background: #fbfbfb;
   border-radius: 3px;
@@ -406,9 +412,6 @@ footer {
         margin-right: 60px;
       }
 
-    //.fork {
-    //}
-
     .codeinfo {
     }
 
@@ -420,8 +423,8 @@ footer {
   section {
     border:1px solid #e5e5e5;
     border-width:1px 0;
-    padding:20px auto;
-    margin: 190px auto 20px;
+    padding:20px;
+    margin: 20px auto 20px;
     max-width: 600px;
   }
 
@@ -441,7 +444,7 @@ footer {
   }
 
   header {
-    padding:20px 20px;
+    padding:80px 20px 0px 20px;
     margin: 0;
 
     h1 {
@@ -457,7 +460,7 @@ footer {
   }
 
   #banner {
-    top: 80px;
+    top: 0px;
 
     .codeinfo {
         display: inline-block;
@@ -465,19 +468,10 @@ footer {
         position:fixed;
         left:20px;
     }
-
-    /*.fork {
-      float: left;
-      display: inline-block;
-      margin-left: 0px;
-      // position:fixed;
-      left:20px;
-     }*/
-
   }
 
   section {
-    margin-top: 130px;
+    margin-top: 30px;
     margin-bottom: 0px;
     width: auto;
   }
@@ -491,9 +485,8 @@ footer {
   body {
   }
 
-  header{
-    position: relative;
-    padding: 5px 0px;
+  header {
+    padding: 10px 0px, 0px, 0px;
     min-height: 0px;
 
     h1 {
@@ -512,6 +505,16 @@ footer {
   #banner { display: none;}
   header ul {
     display:none;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  body {
+  }
+
+  header {
+    padding: 40px 20px 10px 20px;
+    min-height: 0px;
   }
 }
 
@@ -538,6 +541,10 @@ footer {
 @media print, screen and (max-height: 480px) {
   nav {
     display: none;
+  }
+
+  header {
+
   }
 
   footer {
