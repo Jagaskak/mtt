@@ -198,8 +198,12 @@ header {
 }
 
 .navbar {
-  position: relative;
-  z-index: 101;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  top: 0;
+  overflow: hidden;
+  background-color: #333;
 
   ul {
     list-style-type: none;
@@ -251,7 +255,7 @@ header {
   left:0;
   right:0;
   height: 50px;
-  position: fixed;
+  position: relative;
   top: 115px;
   background: #ffcc00;
   border: 1px solid #f0b500;
