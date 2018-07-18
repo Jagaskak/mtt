@@ -233,6 +233,16 @@ header {
   li.dropdown {
     display: inline;
   }
+  
+  .dropdown-content {
+    display: none;
+    width: 100%;
+    top: 60px;
+    position: absolute;
+    padding: 32px 32px;
+    background-color: #fdfdfd;
+    z-index: 101;
+  } 
 
   .dropdown-content a {
     color: white;
@@ -299,16 +309,6 @@ header {
         background-color: #FFE788;
       }
     }
-  }
-
-  #logo {
-    position:absolute;
-    height: 36px;
-    width: 36px;
-    right:7px;
-    top:7px;
-    display: block;
-    background: url(../images/octocat-logo.svg);
   }
 }
 
