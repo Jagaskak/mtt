@@ -233,20 +233,20 @@ header {
     display: inline;
   }
 
-  .dropdown-content a{
+  .dropdown-content a {
     color: white;
     padding: 32px 32px;
     text-decoration: none;
-    display: inline;
+    display: inline-block;
     text-align: center;
 
     &:hover {
       background-color: #82B700;
     }
+  }
 
-    .dropdown:hover .dropdown-content {
-      display: inline;
-    }
+  .dropdown:hover .dropdown-content {
+    display: inline-block;
   }
 }
 
