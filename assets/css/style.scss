@@ -202,6 +202,7 @@ header {
   width: 100%;
   margin: 0;
   top: 0;
+  z-index: 100;
   overflow: hidden;
   background-color: #333;
 
@@ -412,21 +413,6 @@ footer {
       text-overflow: ellipsis;
       -o-text-overflow: ellipsis;
       -ms-text-overflow: ellipsis;
-    }
-  }
-
-  #banner {
-    width: 100%;
-
-    .downloads {
-        margin-right: 60px;
-      }
-
-    .codeinfo {
-    }
-
-    #logo {
-      margin-right: 15px;
     }
   }
 
