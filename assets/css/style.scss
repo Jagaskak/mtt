@@ -239,10 +239,11 @@ header {
     text-decoration: none;
     display: inline-block;
     text-align: center;
+  }
 
-    &:hover {
-      background-color: #82B700;
-    }
+  .dropdown-content a:hover {
+    // background-color: #82B700;
+    background-color: yellow;
   }
 
   .dropdown:hover .dropdown-content {
