@@ -207,6 +207,22 @@ header {
   overflow: hidden;
   background-color: #333;
 
+  ul {
+    list-style:none;
+    height:40px;
+    padding:0;
+    float: left;
+    margin-left:10px;
+
+    li {
+      display:inline;
+
+      a.button {
+        background-color: #FFE788;
+      }
+    }
+  }
+
   .dropbtn {
     background-color: blue;
     color: white;
