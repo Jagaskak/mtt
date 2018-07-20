@@ -21,33 +21,32 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
       </header>
     
-      <div id="navbar">
-        <ul>
-          <li><a href="#about">About</a></li>
+      <ul>
+        <li><a href="#about">About</a></li>
 
-          <li class="dropdown">
-            <ul class="dropbtn">Documentation</ul>
-            <div class="dropdown-content">
-              <a href="#">Doxygen</a>
-              <a href="#">Overall</a>
-              <a href="#">Plugins</a>
-              <a href="#">INI</a>
-            </div>
-          </li>
+        <li><div class="dropdown">
+          <button>Documentation</button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Doxygen</a></li>
+            <li><a href="#">Overall</a></li>
+            <li><a href="#">Plugins</a></li>
+            <li><a href="#">INI</a></li>
+          </ul>
+        </div></li>
 
-          <li><a href="#resources">Resources</a></li>
+        <li><a href="#resources">Resources</a></li>
 
-          <li class="dropdown">
-            <ul class="dropbtn">Downloads</ul>
-            <div class="dropdown-content">
-              <a href="#">ZIP</a>
-              <a href="#">TAR</a>
-            </div>
-          </li>
+        <li><div class="dropdown">
+          <button>Downloads</button>
+          <ul class="dropdown-menu">
+            <li><a href="#">ZIP</a></li>
+            <li><a href="#">TAR</a></li>
+          </ul>
+        </div></li>
 
-          <li><a href="#community">Community</a></li>
-        </ul>
-      </div> <!-- end navbar -->
+        <li><a href="#community">Community</a></li>
+      </ul>
+      <!-- end navbar -->
 
       <div class="wrapper">
         <nav>
