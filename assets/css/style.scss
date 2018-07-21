@@ -198,7 +198,15 @@ header {
   float: left;
   // position: relative;
   display: inline-block;
-}   
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  list-style: none;
+}
 
 .dropdown ul {
   list-style: none;
@@ -208,43 +216,14 @@ header {
   list-style: none;
 }
 
-.dropdown .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  list-style: none;
-  width: 100%;
-  padding: 0;
-}
-
-.dropdown:hover button .dropdown-menu {
-  display: block;
-}
-
-.dropdown button {
-  background-color: orange;
-  color: white;
+.dropdown .dropbtn {
   border: none;
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-} 
-
-.navbar a:hover, .dropdown:hover button {
-  background: red;
-}
-
-.dropdown a {
-  display: block;
-  padding: 0;
-  text-decoration: none;
-  background: blue;
+  outline: none;
   color: white;
-}
-
-.dropdown a:hover {
-  background: yellow;
+  background-color: green;
+  margin: 0;
+  font-size: 16px;
+  padding: 0;
 }
 
 #banner {
