@@ -197,7 +197,11 @@ header {
   display: block;
 }
 
-.dropwdown button {
+.dropdown ul {
+  list-style: none;
+}
+
+.dropdown button {
   background: orange;
   color: white;
   border: none;
