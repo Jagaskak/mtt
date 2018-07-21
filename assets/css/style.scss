@@ -226,17 +226,17 @@ header {
   padding: 0;
 }
 
-.dropdown .dropdown-menu {
+.dropdown:hover .dropdown-menu {
   display: block;
 }
 
 .dropdown button {
-  background-color: orange;
+  background-color: inherit;
   color: white;
   border: none;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .navbar a:hover, .dropdown:hover button {
