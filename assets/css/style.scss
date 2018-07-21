@@ -194,9 +194,19 @@ header {
 }
 
 .dropdown {
-  position: relative;
+  overflow: hidden;
+  float: left;
+  // position: relative;
   display: inline-block;
 }   
+
+.dropdown ul {
+  list-style: none;
+}
+
+.dropdown li {
+  list-style: none;
+}
 
 .dropdown .dropdown-menu {
   position: absolute;
@@ -208,16 +218,8 @@ header {
   padding: 0;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover button .dropdown-menu {
   display: block;
-}
-
-.dropdown ul {
-  list-style: none;
-}
-
-.dropdown li {
-  list-style: none;
 }
 
 .dropdown button {
