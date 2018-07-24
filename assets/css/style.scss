@@ -1,6 +1,5 @@
 ---
 ---
-@import "{{ site.theme }}";
 
 body {
   font:14px/22px 'Quattrocento Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -152,7 +151,7 @@ header {
   width: 100%;
   text-align: center;
   // background: url(../images/background.png) #4276b6;
-  background-color: orange;
+  background: orange;
   box-shadow: 1px 0px 2px rgba(0,0,0,.75);
   z-index:99;
   -webkit-font-smoothing:antialiased;
@@ -334,10 +333,6 @@ footer {
     display: none;
   }
 
-  header {
-    background-color: yellow;
-  }
-
   header, section, footer {
     float:none;
 
@@ -487,5 +482,4 @@ footer {
   }
 }
 
-
-
+@import "{{ site.theme }}";
