@@ -220,12 +220,12 @@ header {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
+  background-color: #333;
   z-index: 102;
 }
 
 .dropdown-content a {
+  flex: auto;
   background-color: #333;
   color: white;
   padding: 0px 10px 0px 0px;
@@ -239,7 +239,10 @@ header {
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
+  position: fixed;
+  right: 0;
+  left: 0;
 }
 
 section {
