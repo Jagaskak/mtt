@@ -31,7 +31,6 @@ The 12 MTT stages are executed according to an ordering as shown in the table. T
 | 490     | LauncherDefaults | Collect parameters passed to test launcher; these include job names and job options.                                                       | 
 | 500     | TestRun          | Run the tests; tests are selected from the test library by matching tags associated with each test.                                        | 
 | 600     | Reporter         | Report the test results. Test results can be sent to the console, to a text file, to a Junit XML file, and/or to the test result database. |
----
 
 Parameter Passing
 ---
