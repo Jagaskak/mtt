@@ -1,17 +1,18 @@
 What is this software?
 ----------------------
-
-This is the MPI Testing Tool (MTT) software package.  It is a
+This is the Middleware Testing Tool (MTT) software package.  It is a
 standalone tool for testing the correctness and performance of
 arbitrary MPI implementations.
 
+This website focuses on documenting the Python Client. For more documentation on the Perl Client, please refer to the [Wiki Pages](https://github.com/open-mpi/mtt/wiki/MTTOverview). 
+
 The MTT is an attempt to create a single tool to download and build a
-variety of different MPI implementations, and then compile and run any
-number of test suites against each of the MPI installations, storing
+variety of different middleware implementations, and then compile and run any
+number of test suites against each of the installations, storing
 the results in a back-end database that then becomes available for
 historical data mining.  The test suites can be for both correctness
 and performance analysis (e.g., tests such as nightly snapshot compile
-results as well as the latency of MPI_SEND can be historically
+results as well as the latency of **MPI_SEND(?)** can be historically
 archived with this tool).
 
 The MTT provides the glue to obtain and install MPI installations
@@ -25,12 +26,7 @@ order to run a common set of tests against a group of MPI
 implementations that all feed into a common PostgresSQL database of
 results.
 
-The MTT client is written almost entirely in perl; the MTT server side
-is written almost entirely in PHP and relies on a back-end PostgresSQL
-database.
-
 The main (loose) requirements that we had for the MTT are:
-
 - Use a back-end database / archival system.
 - Ability to obtain arbitrary MPI implementations from a variety of
   sources (web/FTP download, filesystem copy, Subversion export,
@@ -76,16 +72,15 @@ https://doi.org/10.1007/978-3-540-75416-9_15
 
 Overview
 --------
-
 The MTT divides its execution into six phases:
 
-1. MPI get: obtain MPI software package(s) (e.g., download, copy)
-2. MPI install: install the MPI software package(s) obtained in phase 1.
+1. MiddlewareGet: obtain MPI software package(s) (e.g., download, copy)
+2. MiddlewareBuild: install the MPI software package(s) obtained in phase 1.
    This may involve a binary installation or a build from source.
-3. Test get: obtain MPI test(s)
-4. Test build: build the test(s) against all MPI installations
+3. TestGet: obtain MPI test(s)
+4. TestBuild: build the test(s) against all MPI installations
    installed in phase 2.
-5. Test run: run all the tests build in phase 4.
+5. TestRun: run all the tests build in phase 4.
 6. Report: report the results of phases 2, 4, and 5.
 
 The phases are divided in order to allow a multiplicative effect.  For
@@ -104,36 +99,26 @@ testing yields around 150,000 Open MPI tests.
 
 Quick start
 -----------
-
 Testers run the MTT client on their systems to do all the work.  A
 configuration file is used to specify which MPI implementations to use
 and which tests to run.  
 
 The Open MPI Project uses MTT for nightly regression testing.  A
-sample Perl client configuration file is included in
-samples/perl/ompi-core-template.ini.  This template will require
-customization for each site's specific requirements.  It is also
+sample Python client configuration file is included in
+samples/python/ompi_hello_world.ini.  It is also
 suitable as an example for organizations outside of the Open MPI
 Project.
 
-Open MPI members should visit the MTT wiki for instructions on how to
-setup for nightly regression testing:
-
-    https://github.com/open-mpi/mtt/wiki/OMPITesting
-
-The MTT client requires a few perl packages to be installed locally,
-such as LWP::UserAgent.  Currently, the best way to determine if you
-have all the required packages is simply to try running the client and
-see if it fails due to any missing packages.
+Open MPI members should visit the [MTT wiki](https://github.com/open-mpi/mtt/wiki/OMPITesting) for instructions on how to
+setup for nightly regression testing.
 
 Note that the INI file can be used to specify web proxies if
 necessary.  See comments in the ompi-core-template.ini file for
 details.
 
 
-Running the MTT Perl client
+Running the MTT Python client
 ---------------------------
-
 Having run the MTT client across several organizations within the Open
 MPI Project for quite a while, we have learned that even with common
 goals (such as Open MPI nightly regression testing), MTT tends to get
@@ -141,15 +126,14 @@ used quite differently at each site where it is used.  The
 command-line client was designed to allow a high degree of flexibility
 for site-specific requirements.
 
-The MTT client has many command line options; see the following for a
-full list:
+The MTT client has many command line options; try the following command to see the full list of options:
 
-$ client/mtt --help
+```$ client/mtt --help```
 
 Some sites add an upper layer of logic/scripting above the invocation
 of the MTT client.  For example, some sites run the MTT on
 SLURM-maintained clusters.  A variety of compilers are tested,
-yielding multiple unique (MPI get, MPI install, Test get, Test build)
+yielding multiple unique (MiddlewareGet, MiddlewareBuild, TestGet, TestBuild)
 tuples.  Each tuple is run in its own 1-node SLURM allocation,
 allowing the many installations/builds to run in parallel.  When the
 install/build tuple has completed, more SLURM jobs are queued for each
@@ -163,7 +147,6 @@ the MTT.
 
 Current status
 --------------
-
 This tool was initially developed by the Open MPI team for nightly and
 periodic compile and regression testing.  However, enough other
 parties have expressed [significant] interest that we have open-sourced
@@ -174,7 +157,7 @@ large.
 
 We have no illusions of MTT becoming the be-all/end-all tool for
 testing software -- we do want to keep it somewhat focused on the
-needs and requires of testing MPI implementations.  As such, the usage
+needs and requires of testing middleware implementations.  As such, the usage
 flow is somewhat structured towards that bias.
 
 It should be noted that the software has been mostly developed internally
@@ -184,41 +167,6 @@ while adjusting to a larger community.
 
 License
 -------
-
 Because we want MTT to be a valuable resource to the entire HPC
 community, the MTT uses the new BSD license -- see the LICENSE file in
 the MTT distribution for details.
-
-
-Get involved
-------------
-
-We *want* your feedback.  We *want* you to get involved.
-
-The main web site for the MTT is:
-
-    http://www.open-mpi.org/projects/mtt/
-
-User-level questions and comments should generally be sent to the
-user's mailing list (mtt-users@open-mpi.org).  Because of spam, only
-subscribers are allowed to post to this list (ensure that you
-subscribe with and post from *exactly* the same e-mail address --
-joe@example.com is considered different than
-joe@mycomputer.example.com!).  Visit this page to subscribe to the
-user's list:
-
-     https://lists.open-mpi.org/mailman/listinfo/mtt-users
-
-Developer-level bug reports, questions, and comments should generally
-be sent to the developer's mailing list (mtt-devel@open-mpi.org).
-Please do not post the same question to both lists.  As with the
-user's list, only subscribers are allowed to post to the developer's
-list.  Visit the following web page to subscribe:
-
-     https://lists.open-mpi.org/mailman/listinfo/mtt-devel
-     http://www.open-mpi.org/mailman/listinfo.cgi/mtt-devel
-
-When submitting bug reports to either list, be sure to include as much
-extra information as possible.
-
-Thanks for your time.
