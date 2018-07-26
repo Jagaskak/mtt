@@ -17,20 +17,20 @@ Stages
 ---
 The 12 MTT stages are executed according to an ordering as shown in the table. The lower the ordering, the sooner the stage is executed.
 
-|Ordering | Stage Name | Description |
-| :---: | :--------: | ------ |
-|0|MTTDefaults|Collect defaults for this test definition.|
-| 50 | BIOS | Select BIOS setting to be applied after the next reboot. If user specified setting, scan inventory to check if match is found. |
-| 100 | Firmware | Flash specified FW versions; if user specified FW versions, scan inventory to check if matches are found. |
-| 200 | Provision | Select an image and reboot target nodes. If user specified an image, scan inventory to check if match is found. |
-| 210 | Profile | Collect information on system state. Also details configured system prior to tests being run. |
-| 300 | MiddlewareGet | Get requested middleware. (Downloading a git repo is the typical usage model) |
-| 400 | MiddlewareBuild | Build and install requested middleware. Middleware usage is optional and will be added to the LD_LIBRARY_PATH for the stage. |
-| 450 | TestGet | Get the tests. (Downloading a git repo is the typical usage model) |
-| 475 | TestBuild | Compile the tests; user can specify the modules to be loaded prior to tests building and be unloaded after the stage completes. | 
-| 490 | LauncherDefaults | Collect parameters passed to test launcher; these include job names and job options. |
-| 500 | TestRun | Run the tests; tests are selected from the test library by matching tags associated with each test. | 
-| 600 | Reporter | Report the test results. Test results can be sent to the console, to a text file, to a Junit XML file, and/or to the test result database. |
+|Ordering | Stage Name       | Description                                                                                                                                |
+| :-----: | :--------------: | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0       | MTTDefaults      | Collect defaults for this test definition.                                                                                                 | 
+| 50      | BIOS             | Select BIOS setting to be applied after the next reboot. If user specified setting, scan inventory to check if match is found.             |
+| 100     | Firmware         | Flash specified FW versions; if user specified FW versions, scan inventory to check if matches are found.                                  |
+| 200     | Provision        | Select an image and reboot target nodes. If user specified an image, scan inventory to check if match is found.                            | 
+| 210     | Profile          | Collect information on system state. Also details configured system prior to tests being run.                                              |
+| 300     | MiddlewareGet    | Get requested middleware. (Downloading a git repo is the typical usage model)                                                              |
+| 400     | MiddlewareBuild  | Build and install requested middleware. Middleware usage is optional and will be added to the LD_LIBRARY_PATH for the stage.               |
+| 450     | TestGet          | Get the tests. (Downloading a git repo is the typical usage model)                                                                         |
+| 475     | TestBuild        | Compile the tests; user can specify the modules to be loaded prior to tests building and be unloaded after the stage completes.            | 
+| 490     | LauncherDefaults | Collect parameters passed to test launcher; these include job names and job options.                                                       | 
+| 500     | TestRun          | Run the tests; tests are selected from the test library by matching tags associated with each test.                                        | 
+| 600     | Reporter         | Report the test results. Test results can be sent to the console, to a text file, to a Junit XML file, and/or to the test result database. |
 ---
 
 Parameter Passing
