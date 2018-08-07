@@ -260,14 +260,17 @@ header {
 }
 
 .dropdown-content .block {
-  background-color: seagreen;
+  background-color: inherit;
   color: white;
   text-decoration: none;
   text-align: center;
   display: block;
+  float: left;
+  min-width: 200px;
+  padding: 10px 0px;
 
   span {
-    color: pink;
+    text-decoration: underline;
   }
 
   a {
@@ -275,9 +278,10 @@ header {
     color: white;
     display: block;
     float: none;
+    padding: 10px;
 
     &:hover {
-      color: hotpink;
+      color: #53bbf0;
     }
   }
 }
