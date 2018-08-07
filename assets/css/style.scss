@@ -190,6 +190,18 @@ header {
 .navbar ul {
   list-style: none;
   text-align: center;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  max-height: 40px;
+
+  li {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  padding: 0px 10px;
+  text-decoration: none;
+  }
 }
 
 .navbar ul li {
@@ -207,6 +219,10 @@ header {
   text-align: center;
   padding: 10px;
   text-decoration: none;
+
+  &:hover {
+    background-color: peru;
+  }
 }
 
 
@@ -225,10 +241,11 @@ header {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-}
 
-.navbar a:hover, .dropdown:hover button{
-  background-color: peru;
+  &:hover {
+    background-color: peru;
+        
+  }
 }
 
 .dropdown-content {
@@ -245,10 +262,10 @@ header {
   text-decoration: none;
   display: block;
   text-align: center;
-}
 
-.dropdown-content a:hover {
-  background-color: #666;
+  &:hover {
+    background-color: #666;
+  }
 }
 
 .dropdown:hover .dropdown-content {
