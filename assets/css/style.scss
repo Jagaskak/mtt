@@ -87,9 +87,10 @@ code {
   color:#efefef;
   text-shadow: 0px 1px 0px #000;
   margin: 0 4px;
-  padding: 2px 6px;
+  padding: 10px 10px;
   background: #333;
   border-radius: 2px;
+
 }
 
 pre {
@@ -151,7 +152,7 @@ header {
   right:0;
   width: 100%;
   text-align: center;
-  background: #9c1d1e;
+  background: #286282;
   box-shadow: 1px 0px 2px rgba(0,0,0,.75);
   z-index:99;
   -webkit-font-smoothing:antialiased;
@@ -159,8 +160,8 @@ header {
 
   h1 {
     font: 40px/48px 'Copse', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #f3f3f3;
-    text-shadow: 0px 2px 0px #235796;
+    color: #fff;
+    text-shadow: 0px 2px 0px #6f292a;
     margin: 0px;
     white-space: nowrap;
     overflow: hidden;
@@ -170,7 +171,7 @@ header {
   }
 
   p{
-    color: #d8d8d8;
+    color: #fff;
     text-shadow:rgba(#000, 0.2) 0 1px 0;
     font-size: 18px;
     margin: 0px;
@@ -214,7 +215,7 @@ header {
   text-decoration: none;
 
   &:hover {
-    background-color: peru;
+    background-color: #F2973C;
   }
 }
 
@@ -240,7 +241,7 @@ header {
   margin: 0;
 
   &:hover {
-    background-color: peru;       
+    background-color: #F2973C;       
   }
 }
 
@@ -276,6 +277,7 @@ header {
 
   span {
     // text-decoration: underline;
+    color: #7acdf6;
   }
 
   a {
@@ -323,6 +325,8 @@ nav {
   margin-left:-580px;
   text-align: right;
   background: #fff;
+  max-height: 300px;
+  overflow-y: scroll;
 
   ul {
     list-style: none;
@@ -439,17 +443,6 @@ footer {
     }
 
     p { display: none;}
-  }
-
-  #banner {
-    top: 0px;
-
-    .codeinfo {
-        display: inline-block;
-        margin-left: 0px;
-        position:fixed;
-        left:20px;
-    }
   }
 
   section {
