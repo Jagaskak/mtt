@@ -192,7 +192,7 @@ header {
   text-align: center;
 }
 
-.nav ul li {
+.navbar ul li {
   display: inline-block;
   font-size: 20px;
   color: white;
@@ -207,6 +207,21 @@ header {
   text-align: center;
   padding: 10px;
   text-decoration: none;
+}
+
+.navbar button {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+
+  &:hover {
+    background-color: peru;
+  }
 }
 
 .dropdown {
