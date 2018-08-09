@@ -7,7 +7,7 @@ MTT .ini files includes unique features:
      - Stage names are a nifty mechanism for the test harness to execute stages in a specific order and with a specific purpose
 
 Example:
-![](../assets/images/ini_struct.png) 
+![](/mtt/assets/images/ini_struct.png) 
 
 Setup of INI files:
 ---

@@ -1,5 +1,5 @@
-Get involved
-------------
+# Get involved
+
 We *want* your feedback.  We *want* you to get involved.
 
 The main web site for the MTT is located [here](http://www.open-mpi.org/projects/mtt/).

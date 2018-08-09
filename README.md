@@ -13,7 +13,7 @@ order to run a common set of tests against a group of Middleware implementations
 
 # Overview
 
-MTT is divided into multiple phases of execution to split up grabbing content, building content, running content, and reporting results (please refer to the [INI documentation](/mtt/docs/pages/ini_docs.html) to learn more).
+MTT is divided into multiple phases of execution to split up grabbing content, building content, running content, and reporting results (please refer to the [INI documentation](/mtt/docs/ini_docs.html) to learn more).
 
 The phases are divided to allow a multiplicative effect.  For example, each middleware package obtained may be installed in multiple different ways.  The built tests may be executed in multiple different ways. And so on.
 
@@ -31,7 +31,7 @@ Hence, you must be careful not to specify too much work to MTT -- it will happil
 
 The following graphic is a decent representation of the relationships of the phases to each other, and the general sequence of phases. It shows two example middleware implementations (open MPI and MPICH), but any middleware implementation could be used (even multiple versions of the same middleware implementation):
 
-![](/mtt/docs/pages/mtt-functional.png)
+![](/mtt/assets/images/mtt-functional.png)
 
 # Quick start
 Testers run the MTT client on their systems to do all the work.  A configuration file is used to specify which middleware implementations to use and which tests to run.  
