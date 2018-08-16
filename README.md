@@ -13,7 +13,7 @@ order to run a common set of tests against a group of Middleware implementations
 
 # Overview
 
-MTT is divided into multiple phases of execution to split up grabbing content, building content, running content, and reporting results (please refer to the [INI documentation](/mtt/docs/ini_docs.html) to learn more).
+MTT is divided into multiple phases of execution to split up grabbing content, building content, running content, and reporting results (please refer to the [INI documentation](/mtt/pages/ini_docs.html) to learn more).
 
 The phases are divided to allow a multiplicative effect.  For example, each middleware package obtained may be installed in multiple different ways.  The built tests may be executed in multiple different ways. And so on.
 

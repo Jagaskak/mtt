@@ -152,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classExecuteCmd_1_1ExecuteCmd.html#abd51ca569e60d044fe278b613459c709">   61</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classExecuteCmd_1_1ExecuteCmd.html#abd51ca569e60d044fe278b613459c709">execute</a>(self, options, cmdargs, testDef):</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment"># if this is a dryrun, just declare success</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> <span class="stringliteral">&#39;dryrun&#39;</span> <span class="keywordflow">in</span> testDef.options <span class="keywordflow">and</span> testDef.options[<span class="stringliteral">&#39;dryrun&#39;</span>]:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> (0, <span class="keywordtype">None</span>, <span class="keywordtype">None</span>, 0)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> (0, [], [], 0)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">#  check the options for a directive to merge</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment"># stdout into stderr</span></div>
@@ -180,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> mycmdargs:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            testDef.logger.verbose_print(<span class="stringliteral">&quot;ExecuteCmd error: no cmdargs&quot;</span>)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> (1, <span class="keywordtype">None</span>, <span class="stringliteral">&quot;MTT ExecuteCmd error: no cmdargs&quot;</span>, 0)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> (1, [], [<span class="stringliteral">&quot;MTT ExecuteCmd error: no cmdargs&quot;</span>], 0)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment"># it is possible that the command doesn&#39;t exist or</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment"># isn&#39;t in our path, so protect us</span></div>
@@ -242,7 +242,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">except</span> OSError <span class="keyword">as</span> e:</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">if</span> p:</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                p.wait()</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">return</span> (1, <span class="keywordtype">None</span>, str(e), elapsed_secs)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">return</span> (1, [], [str(e)], elapsed_secs)</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">return</span> (p.returncode,</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                stdout[-1 * stdoutlines:],</div>

@@ -53,7 +53,7 @@ TestDef is passed to all other plugins so that they have access to the log, to g
 - Sets the configuration for tests
 - Logs results
 - Loads plugins by called LoadClasses
-- Starts execution of tests by called one of the [Executor](https://github.com/open-mpi/mtt/tree/master/pylib/Tools/Executor) plugins. The [combinatorial](https://github.com/open-mpi/mtt/blob/master/pylib/Tools/Executor/combinatorial.py) plugin is currently the default plugin; however, the [sequential](https://github.com/open-mpi/mtt/blob/master/pylib/Tools/Executor/sequential.py) plugin can be set by using the ```--executor=sequential``` flag.  
+- Starts execution of tests by calling one of the [Executor](https://github.com/open-mpi/mtt/tree/master/pylib/Tools/Executor) plugins. The [sequential](https://github.com/open-mpi/mtt/blob/master/pylib/Tools/Executor/sequential.py) plugin is currently the default plugin; however, the [combinatorial](https://github.com/open-mpi/mtt/blob/master/pylib/Tools/Executor/combinatorial.py) plugin can be set by using the ```--executor=combinatorial``` flag.  
 - Will add two hidden sections to ConfigParser (ENV and LOG) where environment variables are stuffed into ENV and log results from other plugins are added to LOG.
     - [ConfigParser](https://docs.python.org/3/library/configparser.html) is a python library for parsing INI files
 

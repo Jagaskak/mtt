@@ -8,6 +8,7 @@ var searchData=
   ['_5fmerge_5fdict',['_merge_dict',['../classIUDatabase_1_1IUDatabase.html#a98afecb796bd619142a3c440e9926d41',1,'IUDatabase::IUDatabase']]],
   ['_5fmkdir_5frecursive',['_mkdir_recursive',['../namespaceTestDef.html#a0f44619ec0fe932324e50d8cf706d647',1,'TestDef']]],
   ['_5fpositive_5fint_5foption',['_positive_int_option',['../classExecuteCmd_1_1ExecuteCmd.html#a657ac6b5c7779499ce426ba18234824e',1,'ExecuteCmd::ExecuteCmd']]],
+  ['_5fprint_5fstderr_5fblock',['_print_stderr_block',['../classTextFile_1_1TextFile.html#a65fbc2c1710744e3ebd1038d404af139',1,'TextFile::TextFile']]],
   ['_5fsubmit_5finstall',['_submit_install',['../classIUDatabase_1_1IUDatabase.html#a75e930a15c9ee4e1b7fa5dd4d5c4cfe9',1,'IUDatabase::IUDatabase']]],
   ['_5fsubmit_5fjson_5fdata',['_submit_json_data',['../classIUDatabase_1_1IUDatabase.html#abf478525045264145f74b84ff58adffc',1,'IUDatabase::IUDatabase']]],
   ['_5fsubmit_5ftest_5fbuild',['_submit_test_build',['../classIUDatabase_1_1IUDatabase.html#abfad8bfb6698d723b5cc99d303744c55',1,'IUDatabase::IUDatabase']]],

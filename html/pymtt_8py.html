@@ -118,14 +118,12 @@ Variables</h2></td></tr>
 <tr class="separator:af066a010075617c13a5595243ceb9041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec79fec8fbc6630a3a485916f342683"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#adec79fec8fbc6630a3a485916f342683">pymtt.args</a> = parser.parse_args()</td></tr>
 <tr class="separator:adec79fec8fbc6630a3a485916f342683"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a968aa7c33a2106380483390a0fa2a045"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#a968aa7c33a2106380483390a0fa2a045">pymtt.basedir</a> = args.basedir</td></tr>
-<tr class="separator:a968aa7c33a2106380483390a0fa2a045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac564eaf8be3f93d5dd5703b3d919902b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#ac564eaf8be3f93d5dd5703b3d919902b">pymtt.topdir</a> = basedir</td></tr>
-<tr class="separator:ac564eaf8be3f93d5dd5703b3d919902b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a574a50dd90d5a2f46fcb0e27b43a7af9"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#a574a50dd90d5a2f46fcb0e27b43a7af9">pymtt.chkdir</a> = os.path.join(args.basedir, &quot;System&quot;)</td></tr>
-<tr class="separator:a574a50dd90d5a2f46fcb0e27b43a7af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79ea4ff472e24c5d543c6a30968b21e6"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#a79ea4ff472e24c5d543c6a30968b21e6">pymtt.path</a> = os.path.dirname(sys.argv[0])</td></tr>
-<tr class="separator:a79ea4ff472e24c5d543c6a30968b21e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109ef76f074b08666398bf6a38219cfc"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#a109ef76f074b08666398bf6a38219cfc">pymtt.mtthome</a> = os.environ['MTT_HOME']</td></tr>
+<tr class="separator:a109ef76f074b08666398bf6a38219cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac673c895b8c93a029d2a1655c04af315"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#ac673c895b8c93a029d2a1655c04af315">pymtt.topdir</a> = os.path.join(mtthome, &quot;pylib&quot;)</td></tr>
+<tr class="separator:ac673c895b8c93a029d2a1655c04af315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57729393cfbd99464570d7fa5ad9fa05"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#a57729393cfbd99464570d7fa5ad9fa05">pymtt.basedir</a> = args.basediroros.path.join(mtthome, &quot;pylib&quot;, &quot;System&quot;)</td></tr>
+<tr class="separator:a57729393cfbd99464570d7fa5ad9fa05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab13a60c31fa69917ce06c1a2631aaf02"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#ab13a60c31fa69917ce06c1a2631aaf02">pymtt.m</a> = imp.load_source(&quot;TestDef&quot;, os.path.join(basedir, &quot;TestDef.py&quot;))</td></tr>
 <tr class="separator:ab13a60c31fa69917ce06c1a2631aaf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17f658b5d141d51664bb3ede8830c4c0"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepymtt.html#a17f658b5d141d51664bb3ede8830c4c0">pymtt.cls</a> = getattr(m, &quot;TestDef&quot;)</td></tr>
